@@ -52,8 +52,8 @@ Generator Generator { get; } = new Generator(Engine);
 var template = "Hello, {{name}}!"; // or "/path/to/template"
 var model = new { name = "World" };
 
-string result = Engine.Render(template, model);
-string result = await Generator.GenerateAsync(template, model);
+string resultFromEngine = Engine.Render(template, model);
+string resultFromGenerator = await Generator.GenerateAsync(template, model);
 
 ```
 
