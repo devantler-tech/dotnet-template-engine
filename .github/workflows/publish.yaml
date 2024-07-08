@@ -6,9 +6,6 @@ on:
 jobs:
   publish-github:
     runs-on: ubuntu-latest
-    env:
-      NUGET_FEED: https://nuget.pkg.github.com/devantler/index.json
-      NUGET_USER: devantler
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -17,19 +14,17 @@ jobs:
       - name: Pack
         run: dotnet pack --configuration Release
       - name: Add GitHub Packages as NuGet Source
-        run: dotnet nuget add source --username ${{ env.NUGET_USER }} --password ${{ secrets.GITHUB_TOKEN }} --store-password-in-clear-text --name github "${{ env.NUGET_FEED }}"
+        run: dotnet nuget add source --username devantler --password ${{ secrets.GITHUB_TOKEN }} --store-password-in-clear-text --name github "https://nuget.pkg.github.com/devantler/index.json"
       - name: Push to GitHub Packages
         run: dotnet nuget push src/**/*.nupkg --source "github" --api-key ${{ secrets.GITHUB_TOKEN }} --skip-duplicate
-  publish-nuget:
-    runs-on: ubuntu-latest
-    env:
-      NUGET_API_KEY: ${{ secrets.NUGET_API_KEY }}
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
-      - name: Set up .NET SDK
-        uses: actions/setup-dotnet@v4.0.0
-      - name: Pack
-        run: dotnet pack --configuration Release
-      - name: Push to NuGet
-        run: dotnet nuget push src/**/*.nupkg --source https://api.nuget.org/v3/index.json --api-key ${{ env.NUGET_API_KEY }} --skip-duplicate
+#   publish-nuget:
+#     runs-on: ubuntu-latest
+#     steps:
+#       - name: Checkout repository
+#         uses: actions/checkout@v4
+#       - name: Set up .NET SDK
+#         uses: actions/setup-dotnet@v4.0.0
+#       - name: Pack
+#         run: dotnet pack --configuration Release
+#       - name: Push to NuGet
+#         run: dotnet nuget push src/**/*.nupkg --source https://api.nuget.org/v3/index.json --api-key ${{ secrets.NUGET_API_KEY }} --skip-duplicate
