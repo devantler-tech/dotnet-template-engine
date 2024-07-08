@@ -48,14 +48,14 @@ To render a template, you can use the `Generator` class or the `TemplateEngine` 
 ```csharp
 using Devantler.TemplateEngine;
 
-TemplateEngine Engine { get; } = new TemplateEngine();
-Generator Generator { get; } = new Generator(Engine);
+var templateEngin = new TemplateEngine();
+var generator = new Generator(templateEngine);
 
 var template = "Hello, {{name}}!"; // or "/path/to/template"
 var model = new { Name = "World" };
 
-string resultFromEngine = Engine.Render(template, model);
-string resultFromGenerator = await Generator.GenerateAsync(template, model);
+string resultFromEngine = templateEngine.Render(template, model);
+string resultFromGenerator = await generator.GenerateAsync(template, model);
 
 ```
 
@@ -64,13 +64,13 @@ You can also generate a file from a template.
 ```csharp
 using Devantler.TemplateEngine;
 
-Generator Generator { get; } = new Generator(new TemplateEngine());
+var generator = new Generator(new TemplateEngine());
 
 var template = "Hello, {{name}}!"; // or "/path/to/template"
 var model = new { Name = "World" };
 var output = "hello.txt";
 
-await Generator.GenerateAsync(output, template, model);
+await generator.GenerateAsync(output, template, model);
 ```
 
 Both of these scenarios will render `Hello, World!` as the output, since the `name` property is set to `World`, and the template is `Hello, {{name}}!`.
