@@ -105,7 +105,7 @@ public class GenerateAsyncTests
   /// Tests the <see cref="Generator.GenerateAsync(string, string, object, FileMode)"/> method to ensure that it creates the output directory if it does not exist.
   /// </summary>
   [Fact]
-  public async Task GenerateAsync_GivenOutputPath_ShouldCreateOutputDirectory()
+  public async Task GenerateAsync_GivenValidOutputPath_ShouldCreateOutputDirectory()
   {
     // Arrange
     string outputPath = AppDomain.CurrentDomain.BaseDirectory + "/path/to/output/file.txt";
@@ -126,5 +126,23 @@ public class GenerateAsyncTests
 
     // Cleanup
     File.Delete(outputPath);
+  }
+
+  /// <summary>
+  /// Tests the <see cref="Generator.GenerateAsync(string, string, object, FileMode)"/> method to ensure that it throws an <see cref="ArgumentNullException"/> when the output path is invalid.
+  /// </summary>
+  [Fact]
+  public async Task GenerateAsync_GivenInvalidOutputPath_ShouldThrowArgumentNullException()
+  {
+    // Arrange
+    string outputPath = "!@#$%^&*()";
+    string templateContent = "Hello, {{ name }}!\n";
+    var model = new { Name = "World" };
+
+    var templateEngine = new TemplateEngine();
+    var generator = new Generator(templateEngine);
+
+    // Act & Assert
+    await Assert.ThrowsAsync<ArgumentNullException>(() => generator.GenerateAsync(outputPath, templateContent, model, FileMode.CreateNew));
   }
 }
