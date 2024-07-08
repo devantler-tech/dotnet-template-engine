@@ -40,6 +40,9 @@ dotnet add package Devantler.TemplateEngine
 
 ## 📝 Usage
 
+> [!NOTE]
+> The template engine uses [Scriban](https://github.com/scriban/scriban) under the hood. So to learn more about the syntax, you can visit the [Scriban documentation](https://github.com/scriban/scriban/blob/master/doc/language.md).
+
 To render a template, you can use the `Generator` class.
 
 ```csharp
