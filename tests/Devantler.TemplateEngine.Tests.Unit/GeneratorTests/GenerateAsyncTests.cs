@@ -1,4 +1,4 @@
-namespace Devantler.Commons.TemplateEngine.Tests;
+namespace Devantler.TemplateEngine.Tests.Unit.GeneratorTests;
 
 /// <summary>
 /// Contains unit tests for the <see cref="Generator.GenerateAsync(string, object)"/> and the <see cref="Generator.GenerateAsync(string, string, object, FileMode)"/>

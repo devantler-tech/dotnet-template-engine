@@ -1,4 +1,4 @@
-namespace Devantler.Commons.TemplateEngine;
+namespace Devantler.TemplateEngine;
 
 /// <summary>
 /// Represents a generator that can generate files or string outputs based on templates and models.

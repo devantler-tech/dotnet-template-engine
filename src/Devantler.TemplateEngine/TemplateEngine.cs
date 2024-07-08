@@ -1,4 +1,4 @@
-namespace Devantler.Commons.TemplateEngine;
+namespace Devantler.TemplateEngine;
 
 
 /// <summary>
