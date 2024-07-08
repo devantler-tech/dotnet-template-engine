@@ -132,7 +132,7 @@ public class GenerateAsyncTests
   /// Tests the <see cref="Generator.GenerateAsync(string, string, object, FileMode)"/> method to ensure that it throws an <see cref="ArgumentNullException"/> when the output path is invalid.
   /// </summary>
   [Fact]
-  public async Task GenerateAsync_GivenInvalidOutputPath_ShouldThrowArgumentException()
+  public async Task GenerateAsync_GivenInvalidOutputPath_ShouldThrowException()
   {
     // Arrange
     string outputPath = "!@#$%^&*()";
@@ -143,6 +143,6 @@ public class GenerateAsyncTests
     var generator = new Generator(templateEngine);
 
     // Act & Assert
-    await Assert.ThrowsAsync<ArgumentException>(() => generator.GenerateAsync(outputPath, templateContent, model, FileMode.CreateNew));
+    await Assert.ThrowsAnyAsync<ArgumentException>(() => generator.GenerateAsync(outputPath, templateContent, model, FileMode.CreateNew));
   }
 }

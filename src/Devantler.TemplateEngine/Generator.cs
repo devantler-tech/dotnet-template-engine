@@ -21,8 +21,8 @@ public class Generator(ITemplateEngine templateEngine) : IGenerator
     FileMode fileMode = FileMode.CreateNew
   )
   {
-    string? directoryName = Path.GetDirectoryName(outputPath) ?? throw new ArgumentNullException(nameof(outputPath), "The output path is invalid.");
-    if (!Directory.Exists(directoryName))
+    string? directoryName = Path.GetDirectoryName(outputPath);
+    if (directoryName is not null && !Directory.Exists(directoryName))
       _ = Directory.CreateDirectory(directoryName);
 
     var fileStream = new FileStream(outputPath, fileMode, FileAccess.Write);
