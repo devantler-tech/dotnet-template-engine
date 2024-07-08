@@ -50,7 +50,7 @@ using Devantler.TemplateEngine;
 
 Generator Generator { get; } = new Generator(new TemplateEngine());
 
-var template = "Hello, {{name}}!"; # or "/path/to/template"
+var template = "Hello, {{name}}!"; // or "/path/to/template"
 var model = new { name = "World" };
 
 string result = await Generator.GenerateAsync(template, model);
@@ -63,7 +63,7 @@ using Devantler.TemplateEngine;
 
 Generator Generator { get; } = new Generator(new TemplateEngine());
 
-var template = "Hello, {{name}}!"; # or "/path/to/template"
+var template = "Hello, {{name}}!"; // or "/path/to/template"
 var model = new { name = "World" };
 var output = "hello.txt";
 
