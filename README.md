@@ -70,7 +70,7 @@ var template = "Hello, {{name}}!"; // or "/path/to/template"
 var model = new { Name = "World" };
 var output = "hello.txt";
 
-await Generator.GenerateFileAsync(output, template, model);
+await Generator.GenerateAsync(output, template, model);
 ```
 
 Both of these scenarios will render `Hello, World!` as the output, since the `name` property is set to `World`, and the template is `Hello, {{name}}!`.
