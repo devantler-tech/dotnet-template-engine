@@ -102,4 +102,20 @@ public class GenerateAsyncTests
     // Cleanup
     File.Delete(outputPath);
   }
+
+  /// <summary>
+  /// Tests the <see cref="Generator.GenerateAsync(string, string, object, FileMode)"/> method to ensure that it throws an <see cref="ArgumentException"/> when the output path is invalid.
+  /// </summary>
+  [Fact]
+  public async Task GenerateAsync_GivenInvalidOutputPath_ShouldThrowArgumentException()
+  {
+    // Arrange
+    string outputPath = "!@#$%^&*()";
+
+    // Act
+    async Task Act() => await Generator.GenerateAsync(outputPath, TemplateContent, Model, FileMode.CreateNew);
+
+    // Assert
+    await Assert.ThrowsAsync<ArgumentException>(Act);
+  }
 }

@@ -22,7 +22,9 @@ public class Generator(ITemplateEngine templateEngine) : IGenerator
   )
   {
     string? directoryName = Path.GetDirectoryName(outputPath);
-    if (directoryName is not null && !Directory.Exists(directoryName))
+    if (string.IsNullOrEmpty(directoryName))
+      throw new ArgumentException("The output path is invalid.", nameof(outputPath));
+    if (!Directory.Exists(directoryName))
       _ = Directory.CreateDirectory(directoryName);
 
     var fileStream = new FileStream(outputPath, fileMode, FileAccess.Write);
