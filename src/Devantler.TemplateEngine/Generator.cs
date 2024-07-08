@@ -9,9 +9,7 @@ public class Generator(ITemplateEngine templateEngine) : IGenerator
 
   /// <inheritdoc />
   public Task<string> GenerateAsync(string templateContentOrPath, object model) =>
-    File.Exists(templateContentOrPath) ?
-      _templateEngine.RenderFromPathAsync(templateContentOrPath, model) :
-      _templateEngine.RenderFromContentAsync(templateContentOrPath, model);
+   _templateEngine.RenderAsync(templateContentOrPath, model);
 
   /// <inheritdoc />
   public async Task GenerateAsync(
@@ -28,9 +26,7 @@ public class Generator(ITemplateEngine templateEngine) : IGenerator
       _ = Directory.CreateDirectory(directoryName);
 
     var fileStream = new FileStream(outputPath, fileMode, FileAccess.Write);
-    string renderedTemplate = File.Exists(templateContentOrPath) ?
-      await _templateEngine.RenderFromPathAsync(templateContentOrPath, model) :
-      await _templateEngine.RenderFromContentAsync(templateContentOrPath, model);
+    string renderedTemplate = await _templateEngine.RenderAsync(templateContentOrPath, model);
     await fileStream.WriteAsync(Encoding.UTF8.GetBytes(renderedTemplate));
     await fileStream.FlushAsync();
     fileStream.Close();

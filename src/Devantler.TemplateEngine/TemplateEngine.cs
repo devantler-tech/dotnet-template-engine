@@ -7,26 +7,16 @@ namespace Devantler.TemplateEngine;
 public class TemplateEngine : ITemplateEngine
 {
   /// <summary>
-  /// Renders a template from a file path asynchronously.
+  /// Renders a template from a file path.
   /// </summary>
-  /// <param name="templatePath">The path to the template file.</param>
+  /// <param name="templateContentOrPath">The content of the template or the path to the template file.</param>
   /// <param name="model">The model object to use for rendering the template.</param>
   /// <returns>A task that represents the asynchronous rendering operation. The task result contains the rendered template as a string.</returns>
-  public async Task<string> RenderFromPathAsync(string templatePath, object model)
+  public async Task<string> RenderAsync(string templateContentOrPath, object model)
   {
-    string templateFile = await File.ReadAllTextAsync(templatePath);
-    var parsedTemplate = Scriban.Template.Parse(templateFile);
-    return await parsedTemplate.RenderAsync(model);
-  }
-
-  /// <summary>
-  /// Renders a template from content asynchronously.
-  /// </summary>
-  /// <param name="templateContent">The content of the template.</param>
-  /// <param name="model">The model object to use for rendering the template.</param>
-  /// <returns>A task that represents the asynchronous rendering operation. The task result contains the rendered template as a string.</returns>
-  public async Task<string> RenderFromContentAsync(string templateContent, object model)
-  {
+    string templateContent = File.Exists(templateContentOrPath) ?
+      await File.ReadAllTextAsync(templateContentOrPath) :
+      templateContentOrPath;
     var parsedTemplate = Scriban.Template.Parse(templateContent);
     return await parsedTemplate.RenderAsync(model);
   }

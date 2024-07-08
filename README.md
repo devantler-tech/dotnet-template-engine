@@ -41,17 +41,20 @@ dotnet add package Devantler.TemplateEngine
 > [!NOTE]
 > The template engine uses [Scriban](https://github.com/scriban/scriban) under the hood. So to learn more about the syntax, you can visit the [Scriban documentation](https://github.com/scriban/scriban/blob/master/doc/language.md).
 
-To render a template, you can use the `Generator` class.
+To render a template, you can use the `Generator` class or the `TemplateEngine` class directly.
 
 ```csharp
 using Devantler.TemplateEngine;
 
-Generator Generator { get; } = new Generator(new TemplateEngine());
+TemplateEngine Engine { get; } = new TemplateEngine();
+Generator Generator { get; } = new Generator(Engine);
 
 var template = "Hello, {{name}}!"; // or "/path/to/template"
 var model = new { name = "World" };
 
+string result = Engine.Render(template, model);
 string result = await Generator.GenerateAsync(template, model);
+
 ```
 
 You can also generate a file from a template.
