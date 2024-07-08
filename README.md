@@ -48,7 +48,7 @@ To render a template, you can use the `Generator` class or the `TemplateEngine` 
 ```csharp
 using Devantler.TemplateEngine;
 
-var templateEngin = new TemplateEngine();
+var templateEngine = new TemplateEngine();
 var generator = new Generator(templateEngine);
 
 var template = "Hello, {{name}}!"; // or "/path/to/template"
