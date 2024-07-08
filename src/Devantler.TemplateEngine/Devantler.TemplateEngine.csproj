@@ -1,17 +1,17 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
-    <PropertyGroup>
-        <TargetFramework>net8.0</TargetFramework>
-        <ImplicitUsings>enable</ImplicitUsings>
-        <Nullable>enable</Nullable>
-        <AnalysisLevel>preview-recommended</AnalysisLevel>
-        <EnforceCodeStyleInBuild>true</EnforceCodeStyleInBuild>
-        <GenerateDocumentationFile>true</GenerateDocumentationFile>
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <AnalysisLevel>preview-recommended</AnalysisLevel>
+    <EnforceCodeStyleInBuild>true</EnforceCodeStyleInBuild>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
     <Version>0.0.1</Version>
-    </PropertyGroup>
+  </PropertyGroup>
 
-    <ItemGroup>
+  <ItemGroup>
     <PackageReference Include="Scriban" Version="5.10.0" />
-    </ItemGroup>
+  </ItemGroup>
 
 </Project>
