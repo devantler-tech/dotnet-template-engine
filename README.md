@@ -4,7 +4,11 @@
 [![Test](https://github.com/devantler/dotnet-template-engine/actions/workflows/test.yaml/badge.svg)](https://github.com/devantler/dotnet-template-engine/actions/workflows/test.yaml)
 [![codecov](https://codecov.io/gh/devantler/dotnet-template-engine/graph/badge.svg?token=RhQPb4fE7z)](https://codecov.io/gh/devantler/dotnet-template-engine)
 
+<details>
+  <summary>Show/hide folder structure</summary>
+
 <!-- readme-tree start -->
+
 ```
 .
 ├── .github
@@ -19,4 +23,46 @@
 
 9 directories
 ```
+
 <!-- readme-tree end -->
+
+</details>
+
+A simple template engine for .NET.
+
+## 🚀 Getting Started
+
+To get started, you can install the package from NuGet.
+
+```bash
+dotnet add package Devantler.TemplateEngine
+```
+
+## 📝 Usage
+
+To render a template, you can use the `Generator` class.
+
+```csharp
+using Devantler.TemplateEngine;
+
+Generator Generator { get; } = new Generator(new TemplateEngine());
+
+var template = "Hello, {{name}}!"; # or "/path/to/template"
+var model = new { name = "World" };
+
+string result = await Generator.GenerateAsync(template, model);
+```
+
+You can also generate a file from a template.
+
+```csharp
+using Devantler.TemplateEngine;
+
+Generator Generator { get; } = new Generator(new TemplateEngine());
+
+var template = "Hello, {{name}}!"; # or "/path/to/template"
+var model = new { name = "World" };
+var output = "hello.txt";
+
+await Generator.GenerateFileAsync(output, template, model);
+```
