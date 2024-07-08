@@ -8,6 +8,7 @@
   <summary>Show/hide folder structure</summary>
 
 <!-- readme-tree start -->
+
 ```
 .
 ├── .github
@@ -22,6 +23,7 @@
 
 9 directories
 ```
+
 <!-- readme-tree end -->
 
 </details>
@@ -50,7 +52,7 @@ TemplateEngine Engine { get; } = new TemplateEngine();
 Generator Generator { get; } = new Generator(Engine);
 
 var template = "Hello, {{name}}!"; // or "/path/to/template"
-var model = new { name = "World" };
+var model = new { Name = "World" };
 
 string resultFromEngine = Engine.Render(template, model);
 string resultFromGenerator = await Generator.GenerateAsync(template, model);
@@ -65,7 +67,7 @@ using Devantler.TemplateEngine;
 Generator Generator { get; } = new Generator(new TemplateEngine());
 
 var template = "Hello, {{name}}!"; // or "/path/to/template"
-var model = new { name = "World" };
+var model = new { Name = "World" };
 var output = "hello.txt";
 
 await Generator.GenerateFileAsync(output, template, model);
