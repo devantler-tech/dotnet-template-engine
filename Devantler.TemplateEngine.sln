@@ -3,13 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{6B12C8C8-E32B-4370-9B4E-EAE307F52BE7}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Devantler.TemplateEngine", "Devantler.TemplateEngine\Devantler.TemplateEngine.csproj", "{2F01300B-69CE-4AC0-97D1-D10E0EFF60EA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Devantler.TemplateEngine", "src\Devantler.TemplateEngine\Devantler.TemplateEngine.csproj", "{BA31A920-7B9E-41A3-9DB7-CD25EFDDC799}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{11514842-1BE7-403C-AB5E-BAFB9FCBCDE2}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Devantler.TemplateEngine.Tests.Unit", "tests\Devantler.TemplateEngine.Tests.Unit\Devantler.TemplateEngine.Tests.Unit.csproj", "{BA95D152-BF7C-4510-A92F-32A62DB354BF}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Devantler.TemplateEngine.Tests", "Devantler.TemplateEngine.Tests\Devantler.TemplateEngine.Tests.csproj", "{8D1DA7A8-9514-40C6-BE79-38842C16D96A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,20 +13,16 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{BA31A920-7B9E-41A3-9DB7-CD25EFDDC799}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{BA31A920-7B9E-41A3-9DB7-CD25EFDDC799}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{BA31A920-7B9E-41A3-9DB7-CD25EFDDC799}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{BA31A920-7B9E-41A3-9DB7-CD25EFDDC799}.Release|Any CPU.Build.0 = Release|Any CPU
-		{BA95D152-BF7C-4510-A92F-32A62DB354BF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{BA95D152-BF7C-4510-A92F-32A62DB354BF}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{BA95D152-BF7C-4510-A92F-32A62DB354BF}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{BA95D152-BF7C-4510-A92F-32A62DB354BF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2F01300B-69CE-4AC0-97D1-D10E0EFF60EA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2F01300B-69CE-4AC0-97D1-D10E0EFF60EA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2F01300B-69CE-4AC0-97D1-D10E0EFF60EA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2F01300B-69CE-4AC0-97D1-D10E0EFF60EA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8D1DA7A8-9514-40C6-BE79-38842C16D96A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8D1DA7A8-9514-40C6-BE79-38842C16D96A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8D1DA7A8-9514-40C6-BE79-38842C16D96A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8D1DA7A8-9514-40C6-BE79-38842C16D96A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
-	EndGlobalSection
-	GlobalSection(NestedProjects) = preSolution
-		{BA31A920-7B9E-41A3-9DB7-CD25EFDDC799} = {6B12C8C8-E32B-4370-9B4E-EAE307F52BE7}
-		{BA95D152-BF7C-4510-A92F-32A62DB354BF} = {11514842-1BE7-403C-AB5E-BAFB9FCBCDE2}
 	EndGlobalSection
 EndGlobal
