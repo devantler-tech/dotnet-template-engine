@@ -23,7 +23,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\src\Devantler.TemplateEngine\Devantler.TemplateEngine.csproj" />
+    <ProjectReference Include="..\Devantler.TemplateEngine\Devantler.TemplateEngine.csproj" />
   </ItemGroup>
 
   <ItemGroup>
