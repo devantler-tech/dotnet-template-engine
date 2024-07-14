@@ -64,9 +64,9 @@ var generator = new Generator(new TemplateEngine());
 
 var template = "Hello, {{name}}!"; // or "/path/to/template"
 var model = new { Name = "World" };
-var output = "hello.txt";
+var outputPath = "hello.txt";
 
-await generator.GenerateAsync(output, template, model);
+await generator.GenerateAsync(outputPath, template, model);
 ```
 
 Both of these scenarios will render `Hello, World!` as the output, since the `name` property is set to `World`, and the template is `Hello, {{name}}!`.

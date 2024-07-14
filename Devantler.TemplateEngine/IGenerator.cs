@@ -6,7 +6,7 @@ namespace Devantler.TemplateEngine;
 public interface IGenerator
 {
   /// <summary>
-  /// Generates a file asynchronously based on a template and a model.
+  /// Generates a file based on a template and a model.
   /// </summary>
   /// <param name="outputPath">The path where the generated file will be saved.</param>
   /// <param name="templateContentOrPath">The template path or content used for generating the file.</param>
@@ -16,7 +16,7 @@ public interface IGenerator
   Task GenerateAsync(string outputPath, string templateContentOrPath, object model, FileMode fileMode = FileMode.CreateNew);
 
   /// <summary>
-  /// Generates a string output based on the specified template and model asynchronously.
+  /// Generates a string output based on the specified template and model.
   /// </summary>
   /// <param name="templateContentOrPath">The template path or content used for generating the output.</param>
   /// <param name="model">The model object used to populate the template.</param>
