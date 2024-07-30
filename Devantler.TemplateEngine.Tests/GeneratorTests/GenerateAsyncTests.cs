@@ -6,7 +6,7 @@ namespace Devantler.TemplateEngine.Tests.Unit.GeneratorTests;
 public class GenerateAsyncTests
 {
   Generator Generator { get; } = new Generator(new TemplateEngine());
-  string TemplateContent { get; } = $"Hello, {{ name }}!{Environment.NewLine}";
+  string TemplateContent { get; } = $"Hello, {{{{ name }}}}!{Environment.NewLine}";
   object Model { get; } = new { Name = "World" };
   string ExpectedOutput { get; } = $"Hello, World!{Environment.NewLine}";
 
