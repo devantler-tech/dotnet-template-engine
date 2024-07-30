@@ -6,9 +6,9 @@ namespace Devantler.TemplateEngine.Tests.Unit.GeneratorTests;
 public class GenerateAsyncTests
 {
   Generator Generator { get; } = new Generator(new TemplateEngine());
-  string TemplateContent { get; } = "Hello, {{ name }}!\n";
+  string TemplateContent { get; } = $"Hello, {{ name }}!{Environment.NewLine}";
   object Model { get; } = new { Name = "World" };
-  string ExpectedOutput { get; } = "Hello, World!\n";
+  string ExpectedOutput { get; } = $"Hello, World!{Environment.NewLine}";
 
   /// <summary>
   /// Tests the <see cref="Generator.GenerateAsync(string, object)"/> method to ensure that it renders the template correctly.
