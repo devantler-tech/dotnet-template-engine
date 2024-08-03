@@ -15,9 +15,9 @@ public class TemplateEngine : ITemplateEngine
   public async Task<string> RenderAsync(string templateContentOrPath, object model)
   {
     string templateContent = File.Exists(templateContentOrPath) ?
-      await File.ReadAllTextAsync(templateContentOrPath) :
+      await File.ReadAllTextAsync(templateContentOrPath).ConfigureAwait(false) :
       templateContentOrPath;
     var parsedTemplate = Scriban.Template.Parse(templateContent);
-    return await parsedTemplate.RenderAsync(model);
+    return await parsedTemplate.RenderAsync(model).ConfigureAwait(false);
   }
 }

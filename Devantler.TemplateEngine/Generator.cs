@@ -26,9 +26,9 @@ public class Generator(ITemplateEngine templateEngine) : IGenerator
       _ = Directory.CreateDirectory(directoryName);
 
     var fileStream = new FileStream(outputPath, fileMode, FileAccess.Write);
-    string renderedTemplate = await _templateEngine.RenderAsync(templateContentOrPath, model);
-    await fileStream.WriteAsync(Encoding.UTF8.GetBytes(renderedTemplate));
-    await fileStream.FlushAsync();
+    string renderedTemplate = await _templateEngine.RenderAsync(templateContentOrPath, model).ConfigureAwait(false);
+    await fileStream.WriteAsync(Encoding.UTF8.GetBytes(renderedTemplate)).ConfigureAwait(false);
+    await fileStream.FlushAsync().ConfigureAwait(false);
     fileStream.Close();
   }
 }
