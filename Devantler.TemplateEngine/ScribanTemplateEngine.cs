@@ -4,7 +4,7 @@ namespace Devantler.TemplateEngine;
 /// <summary>
 /// Represents a template engine that can render templates from a file path or from content.
 /// </summary>
-public class TemplateEngine : ITemplateEngine
+public class ScribanTemplateEngine : ITemplateEngine
 {
   /// <summary>
   /// Renders a template from a file path.

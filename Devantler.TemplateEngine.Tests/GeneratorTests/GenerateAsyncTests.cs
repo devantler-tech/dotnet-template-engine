@@ -5,8 +5,8 @@ namespace Devantler.TemplateEngine.Tests.Unit.GeneratorTests;
 /// </summary>
 public class GenerateAsyncTests
 {
-  Generator Generator { get; } = new Generator(new TemplateEngine());
-  string TemplateContent { get; } = $"Hello, {{{{ name }}}}!{Environment.NewLine}";
+    Generator Generator { get; } = new Generator(new ScribanTemplateEngine());
+    string TemplateContent { get; } = $"Hello, {{{{ name }}}}!{Environment.NewLine}";
   object Model { get; } = new { Name = "World" };
   string ExpectedOutput { get; } = $"Hello, World!{Environment.NewLine}";
 
@@ -20,7 +20,7 @@ public class GenerateAsyncTests
     string templatePath = $"{AppDomain.CurrentDomain.BaseDirectory}/assets/templates/hello-template.txt";
 
     // Act
-    string result = await Generator.GenerateAsync(templatePath, Model).ConfigureAwait(false);
+    string result = await Generator.GenerateAsync(templatePath, Model);
 
     // Assert
     Assert.Equal(ExpectedOutput, result);
@@ -37,11 +37,11 @@ public class GenerateAsyncTests
     string templatePath = $"{AppDomain.CurrentDomain.BaseDirectory}/assets/templates/hello-template.txt";
 
     // Act
-    await Generator.GenerateAsync(outputPath, templatePath, Model, FileMode.CreateNew).ConfigureAwait(false);
+    await Generator.GenerateAsync(outputPath, templatePath, Model, FileMode.CreateNew);
 
     // Assert
     Assert.True(File.Exists(outputPath));
-    string fileContent = await File.ReadAllTextAsync(outputPath).ConfigureAwait(false);
+    string fileContent = await File.ReadAllTextAsync(outputPath);
     Assert.Equal(ExpectedOutput, fileContent);
 
     // Cleanup
@@ -55,7 +55,7 @@ public class GenerateAsyncTests
   public async Task GenerateAsync_GivenTemplateContentAndNoFileMode_ShouldRenderTemplate()
   {
     // Act
-    string result = await Generator.GenerateAsync(TemplateContent, Model).ConfigureAwait(false);
+    string result = await Generator.GenerateAsync(TemplateContent, Model);
 
     // Assert
     Assert.Equal(ExpectedOutput, result);
@@ -71,11 +71,11 @@ public class GenerateAsyncTests
     string outputPath = AppDomain.CurrentDomain.BaseDirectory + "/hello-template-content.txt";
 
     // Act
-    await Generator.GenerateAsync(outputPath, TemplateContent, Model, FileMode.CreateNew).ConfigureAwait(false);
+    await Generator.GenerateAsync(outputPath, TemplateContent, Model, FileMode.CreateNew);
 
     // Assert
     Assert.True(File.Exists(outputPath));
-    string fileContent = await File.ReadAllTextAsync(outputPath).ConfigureAwait(false);
+    string fileContent = await File.ReadAllTextAsync(outputPath);
     Assert.Equal(ExpectedOutput, fileContent);
 
     // Cleanup
@@ -92,11 +92,11 @@ public class GenerateAsyncTests
     string outputPath = AppDomain.CurrentDomain.BaseDirectory + "/path/to/output/file.txt";
 
     // Act
-    await Generator.GenerateAsync(outputPath, TemplateContent, Model, FileMode.CreateNew).ConfigureAwait(false);
+    await Generator.GenerateAsync(outputPath, TemplateContent, Model, FileMode.CreateNew);
 
     // Assert
     Assert.True(File.Exists(outputPath));
-    string fileContent = await File.ReadAllTextAsync(outputPath).ConfigureAwait(false);
+    string fileContent = await File.ReadAllTextAsync(outputPath);
     Assert.Equal(ExpectedOutput, fileContent);
 
     // Cleanup
