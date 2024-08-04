@@ -5,8 +5,8 @@ namespace Devantler.TemplateEngine.Tests.Unit.GeneratorTests;
 /// </summary>
 public class GenerateAsyncTests
 {
-    Generator Generator { get; } = new Generator(new ScribanTemplateEngine());
-    string TemplateContent { get; } = $"Hello, {{{{ name }}}}!{Environment.NewLine}";
+  Generator Generator { get; } = new Generator(new ScribanTemplateEngine());
+  string TemplateContent { get; } = $"Hello, {{{{ name }}}}!{Environment.NewLine}";
   object Model { get; } = new { Name = "World" };
   string ExpectedOutput { get; } = $"Hello, World!{Environment.NewLine}";
 
