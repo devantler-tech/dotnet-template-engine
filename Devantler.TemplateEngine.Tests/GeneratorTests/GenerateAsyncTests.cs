@@ -1,4 +1,4 @@
-namespace Devantler.TemplateEngine.Tests.Unit.GeneratorTests;
+namespace Devantler.TemplateEngine.Tests.GeneratorTests;
 
 /// <summary>
 /// Contains unit tests for the <see cref="Generator.GenerateAsync(string, object)"/> and the <see cref="Generator.GenerateAsync(string, string, object, FileMode)"/>
@@ -37,7 +37,7 @@ public class GenerateAsyncTests
     string templatePath = $"{AppDomain.CurrentDomain.BaseDirectory}/assets/templates/hello-template.txt";
 
     // Act
-    await Generator.GenerateAsync(outputPath, templatePath, Model, FileMode.CreateNew);
+    await Generator.GenerateAsync(templatePath, outputPath, Model, FileMode.CreateNew);
 
     // Assert
     Assert.True(File.Exists(outputPath));
@@ -71,7 +71,7 @@ public class GenerateAsyncTests
     string outputPath = AppDomain.CurrentDomain.BaseDirectory + "/hello-template-content.txt";
 
     // Act
-    await Generator.GenerateAsync(outputPath, TemplateContent, Model, FileMode.CreateNew);
+    await Generator.GenerateAsync(TemplateContent, outputPath, Model, FileMode.CreateNew);
 
     // Assert
     Assert.True(File.Exists(outputPath));
@@ -92,7 +92,7 @@ public class GenerateAsyncTests
     string outputPath = AppDomain.CurrentDomain.BaseDirectory + "/path/to/output/file.txt";
 
     // Act
-    await Generator.GenerateAsync(outputPath, TemplateContent, Model, FileMode.CreateNew);
+    await Generator.GenerateAsync(TemplateContent, outputPath, Model, FileMode.CreateNew);
 
     // Assert
     Assert.True(File.Exists(outputPath));
@@ -113,7 +113,7 @@ public class GenerateAsyncTests
     string outputPath = "!@#$%^&*()";
 
     // Act
-    async Task Act() => await Generator.GenerateAsync(outputPath, TemplateContent, Model, FileMode.CreateNew).ConfigureAwait(false);
+    async Task Act() => await Generator.GenerateAsync(TemplateContent, outputPath, Model, FileMode.CreateNew).ConfigureAwait(false);
 
     // Assert
     _ = await Assert.ThrowsAsync<ArgumentException>(Act);
