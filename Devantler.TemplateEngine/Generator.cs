@@ -13,8 +13,8 @@ public class Generator(ITemplateEngine templateEngine) : IGenerator
 
   /// <inheritdoc />
   public async Task GenerateAsync(
-    string outputPath,
     string templateContentOrPath,
+    string outputPath,
     object model,
     FileMode fileMode = FileMode.CreateNew
   )

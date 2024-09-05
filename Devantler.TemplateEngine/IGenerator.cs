@@ -8,12 +8,12 @@ public interface IGenerator
   /// <summary>
   /// Generates a file based on a template and a model.
   /// </summary>
-  /// <param name="outputPath">The path where the generated file will be saved.</param>
   /// <param name="templateContentOrPath">The template path or content used for generating the file.</param>
+  /// <param name="outputPath">The path where the generated file will be saved.</param>
   /// <param name="model">The model object used for generating the file.</param>
   /// <param name="fileMode">The file mode used when creating the file. Default is FileMode.CreateNew.</param>
   /// <returns>A task representing the asynchronous operation.</returns>
-  Task GenerateAsync(string outputPath, string templateContentOrPath, object model, FileMode fileMode = FileMode.CreateNew);
+  Task GenerateAsync(string templateContentOrPath, string outputPath, object model, FileMode fileMode = FileMode.CreateNew);
 
   /// <summary>
   /// Generates a string output based on the specified template and model.
