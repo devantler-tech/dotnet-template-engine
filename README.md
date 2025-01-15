@@ -18,7 +18,7 @@
     └── assets
         └── templates
 
-7 directories
+8 directories
 ```
 <!-- readme-tree end -->
 
