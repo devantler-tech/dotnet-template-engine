@@ -12,13 +12,15 @@
 .
 ├── .github
 │   └── workflows
-├── Devantler.TemplateEngine
-└── Devantler.TemplateEngine.Tests
-    ├── GeneratorTests
-    └── assets
-        └── templates
+├── src
+│   └── Devantler.TemplateEngine
+└── tests
+    └── Devantler.TemplateEngine.Tests
+        ├── GeneratorTests
+        └── assets
+            └── templates
 
-8 directories
+10 directories
 ```
 <!-- readme-tree end -->
 
