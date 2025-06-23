@@ -25,7 +25,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\src\Devantler.TemplateEngine\Devantler.TemplateEngine.csproj" />
+    <ProjectReference Include="..\..\src\DevantlerTech.TemplateEngine\DevantlerTech.TemplateEngine.csproj" />
   </ItemGroup>
 
   <ItemGroup>

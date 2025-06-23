@@ -1,4 +1,4 @@
-namespace Devantler.TemplateEngine;
+namespace DevantlerTech.TemplateEngine;
 
 /// <summary>
 /// Represents a template engine that can render templates using a specified model.
