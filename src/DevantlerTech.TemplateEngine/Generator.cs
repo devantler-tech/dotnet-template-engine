@@ -1,6 +1,6 @@
 using System.Text;
 
-namespace Devantler.TemplateEngine;
+namespace DevantlerTech.TemplateEngine;
 
 /// <inheritdoc />
 public class Generator(ITemplateEngine templateEngine) : IGenerator

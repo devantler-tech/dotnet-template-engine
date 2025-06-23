@@ -5,9 +5,9 @@
     <Platform Name="x86" />
   </Configurations>
   <Folder Name="/src/">
-    <Project Path="src/Devantler.TemplateEngine/Devantler.TemplateEngine.csproj" />
+    <Project Path="src/DevantlerTech.TemplateEngine/DevantlerTech.TemplateEngine.csproj" />
   </Folder>
   <Folder Name="/tests/">
-    <Project Path="tests/Devantler.TemplateEngine.Tests/Devantler.TemplateEngine.Tests.csproj" />
+    <Project Path="tests/DevantlerTech.TemplateEngine.Tests/DevantlerTech.TemplateEngine.Tests.csproj" />
   </Folder>
 </Solution>

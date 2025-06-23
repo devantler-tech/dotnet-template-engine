@@ -11,7 +11,7 @@ A simple template engine for .NET.
 To get started, you can install the package from NuGet.
 
 ```bash
-dotnet add package Devantler.TemplateEngine
+dotnet add package DevantlerTech.TemplateEngine
 ```
 
 ## 📝 Usage
@@ -22,7 +22,7 @@ dotnet add package Devantler.TemplateEngine
 To render a template, you can use the `Generator` class or the `TemplateEngine` class directly.
 
 ```csharp
-using Devantler.TemplateEngine;
+using DevantlerTech.TemplateEngine;
 
 var templateEngine = new TemplateEngine();
 var generator = new Generator(templateEngine);
@@ -38,7 +38,7 @@ string resultFromGenerator = await generator.GenerateAsync(template, model);
 You can also generate a file from a template.
 
 ```csharp
-using Devantler.TemplateEngine;
+using DevantlerTech.TemplateEngine;
 
 var generator = new Generator(new TemplateEngine());
 
